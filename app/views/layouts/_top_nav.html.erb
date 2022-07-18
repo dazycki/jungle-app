@@ -7,6 +7,13 @@
   </section>
 </header>
 <nav class="navbar navbar-expand-lg navbar-dark sticky-nav">
+
+<% if current_user %>
+  Signed in as <%= current_user.first_name %> | <%= link_to "Logout", '/logout' %>
+<% else %>
+  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+<% end %>
+
   <div class="container">
     <a class="navbar-brand" href="<%= root_path %>">Jungle</a>
     <button
